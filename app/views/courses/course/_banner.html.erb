@@ -1,9 +1,8 @@
 <div class="banner">
-  <div class='banner__badge'>
+  <div class='banner__badge flex justify-center'>
     <%= render ProgressBadgeComponent.new(
       course: course,
       current_user: current_user,
-      modifier: '',
       url: courses_progress_path(course.id)
     )%>
   </div>
