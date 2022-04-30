@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '6.1.4.6'
 
-gem 'activeadmin', '~> 2.11'
+gem 'activeadmin', '~> 2.12'
 gem 'activeadmin_addons', '~> 1.9'
 gem 'active_material', '~> 1.5'
 gem 'acts_as_votable', '~> 0.13'
@@ -22,15 +22,14 @@ gem 'github_webhook', '~> 1.4'
 gem 'inline_svg', '~> 1.8'
 gem 'jquery-rails', '~> 4.4'
 gem 'kaminari', '~> 1.2'
-gem 'kramdown', '~> 2.3'
-gem 'newrelic_rpm', '~> 8.5'
+gem 'kramdown', '~> 2.4'
+gem 'newrelic_rpm', '~> 8.6'
 gem 'noticed', '~> 1.5'
 gem 'octokit', '~> 4.22'
 gem 'omniauth-github', '~> 2.0'
 gem 'omniauth-google-oauth2', '~> 1.0'
 gem 'omniauth-rails_csrf_protection', '~> 1.0'
 gem 'pg', '~> 1.3'
-gem 'premailer-rails', '~> 1.11'
 gem 'puma', '~> 5.6'
 gem 'rack-attack', '~> 6.6'
 gem 'react-rails', '~> 2.6'
@@ -48,10 +47,10 @@ group :development do
   gem 'letter_opener', '~> 1.8'
   gem 'listen', '~> 3.7'
   gem 'rack-mini-profiler'
-  gem 'rubocop', '~> 1.26', require: false
+  gem 'rubocop', '~> 1.27', require: false
   gem 'rubocop-performance', '~> 1.13', require: false
   gem 'rubocop-rails', '~> 2.14', require: false
-  gem 'rubocop-rspec', '~> 2.9', require: false
+  gem 'rubocop-rspec', '~> 2.10', require: false
   gem 'web-console', '~> 4.2'
 end
 

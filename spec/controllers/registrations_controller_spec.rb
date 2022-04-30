@@ -16,8 +16,11 @@ RSpec.describe RegistrationsController do
         password_confirmation: 'foobar1',
       }
     end
-    let!(:path) { create(:path, id: 1) }
     let(:user) { User.create(user_attributes) }
+
+    before do
+      create(:path, id: 1)
+    end
 
     it 'redirects to the dashboard' do
       post :create, params: { user: user_attributes }
@@ -25,19 +28,19 @@ RSpec.describe RegistrationsController do
     end
 
     it 'registers the new user on the mailchimp mailing list', if: ENV['MAIL_CHIMP_LIST_ID'] do
-      expect(MailchimpSubscription).to receive(:create)
+      post :create, params: { user: user_attributes }
+
+      expect(MailchimpSubscription).to have_received(:create)
         .with(
           email: user.email,
           username: user.username,
           signup_date: user.created_at
         )
-
-      post :create, params: { user: user_attributes }
     end
   end
 
   describe 'PATCH #update' do
-    let(:user) { FactoryBot.create(:user) }
+    let(:user) { create(:user) }
     let(:updated_attributes) do
       {
         email: 'kevin@email.com',
